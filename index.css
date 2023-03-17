@@ -1,0 +1,980 @@
+@media only screen and (max-width: 600px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .dark-mode {
+    background-color: black;
+    color: white;
+  }
+  #root {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "aside main";
+    padding-left: 10px;
+    font-family: Arial, sans-serif;
+  }
+  #header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    width: 550px;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1px 10px 5px 10px;
+  }
+  #header.dark-mode {
+    background-color: #0f0f0f;
+    color: white;
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .logo img {
+    width: 110px;
+    height: 70px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .fa-bars {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .fa-bars:hover {
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+
+  .youtube-icon {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .search {
+    display: flex;
+  }
+
+  .search form {
+    display: flex;
+    border: none;
+    border-radius: 40px 0 0 40px;
+    height: 40px;
+  }
+  .search input {
+    padding: 10px;
+    width: 130px;
+    height: 100%;
+    border: 1px gray solid;
+    border-radius: 40px 0 0 40px;
+  }
+  .search-btn {
+    width: 40px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px gray solid;
+    cursor: pointer;
+  }
+
+  .mic-btn {
+    width: 50px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .fa-magnifying-glass {
+    font-size: 17px;
+  }
+  .fa-microphone {
+    color: blue;
+    font-size: 15px;
+  }
+  .header-account {
+    display: flex;
+    align-items: center;
+  }
+  .header-i:hover {
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  .header-account i {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .profile-image {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .account-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    width: 240px;
+    height: auto;
+    background-color: #f8f8f8;
+    z-index: 99;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    display: none;
+  }
+  .account-sidebar.display-flex {
+    display: flex;
+  }
+  .personal-info {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    gap: 20px;
+    line-height: 2;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+  }
+  .sidebar-profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .personal-info a {
+    text-decoration: none;
+  }
+  .account-settings {
+    display: flex;
+  }
+  .settings-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .settings-icons div {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 20px;
+    color: #363434;
+  }
+  .settings-icons div.border {
+    border-bottom: 1px solid gray;
+    width: 200px;
+    padding: 10px 0px 10px 0px;
+  }
+  .settings-icons div:hover {
+    background-color: #8b7f7f;
+    color: #f2f2f2;
+  }
+  .settings-icons i {
+    font-size: 20px;
+  }
+
+  #aside {
+    grid-area: aside;
+  }
+  .hidden {
+    display: none;
+  }
+  #aside-parent {
+    display: none;
+  }
+
+  .short-sidebar-menu {
+    width: 90px;
+    height: auto;
+  }
+  .short-sidebar-menu li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    line-height: 3;
+    cursor: pointer;
+    padding-right: 10px;
+  }
+
+  .short-sidebar-menu i {
+    font-size: 22px;
+  }
+  .short-sidebar-menu p {
+    font-size: 10px;
+  }
+  .short-sidebar-menu li:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  #navbar {
+    width: 450px;
+    overflow-x: auto;
+  }
+  #navbar-list ul {
+    width: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  #navbar-list li {
+    background-color: #f2f2f2;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #393939;
+    cursor: pointer;
+    font-weight: 400;
+  }
+
+  #navbar-list li:hover {
+    background-color: #ccc;
+  }
+  #navbar-list li.btn-clicked {
+    background-color: black;
+    color: #ccc;
+  }
+  #main {
+    grid-area: main;
+  }
+  .video-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 300px;
+  }
+  .videos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .videos {
+    position: relative;
+  }
+  .video-length {
+    position: absolute;
+    right: 15%;
+    background-color: black;
+    color: white;
+    top: 55%;
+  }
+  .videos-img {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .video-channel {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .channel-logo {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .videos h4 {
+    font-family: "Roboto", "Arial", sans-serif;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  .channel-p {
+    opacity: 0.5;
+    font-size: smaller;
+    line-height: 2;
+  }
+}
+@media only screen and (min-width: 601px) and (max-width: 1023px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .dark-mode {
+    background-color: #0f0f0f;
+    color: white;
+  }
+  #root {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "aside main";
+    padding-left: 10px;
+    font-family: Arial, sans-serif;
+  }
+  #header {
+    grid-area: header;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 900px;
+    height: 60px;
+    gap: 30px;
+    padding: 1px 10px 5px 10px;
+  }
+  #header.dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .logo img {
+    width: 110px;
+    height: 70px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .fa-bars {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .fa-bars:hover {
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+
+  .youtube-icon {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .search {
+    display: flex;
+  }
+
+  .search form {
+    display: flex;
+    border: none;
+    border-radius: 40px 0 0 40px;
+    height: 40px;
+  }
+  .search input {
+    width: 250px;
+    padding: 10px;
+    height: 100%;
+    border: 1px gray solid;
+    border-radius: 40px 0 0 40px;
+  }
+  .search-btn {
+    width: 60px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px gray solid;
+    cursor: pointer;
+  }
+
+  .mic-btn {
+    width: 50px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .fa-magnifying-glass {
+    font-size: 17px;
+  }
+  .fa-microphone {
+    color: blue;
+    font-size: 15px;
+  }
+  .header-account {
+    display: flex;
+    align-items: center;
+  }
+  .header-account i {
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .header-i:hover {
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  .profile-image {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .account-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 100px;
+    top: 50px;
+    width: 250px;
+    height: auto;
+    background-color: #f8f8f8;
+    z-index: 99;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    display: none;
+  }
+  .account-sidebar.display-flex {
+    display: flex;
+  }
+  .personal-info {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    gap: 20px;
+    line-height: 2;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+  }
+  .sidebar-profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .personal-info a {
+    text-decoration: none;
+  }
+  .account-settings {
+    display: flex;
+  }
+  .settings-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .settings-icons div {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 20px;
+    color: #363434;
+  }
+  .settings-icons div.border {
+    border-bottom: 1px solid gray;
+    width: 200px;
+    padding: 10px 0px 10px 0px;
+  }
+  .settings-icons div:hover {
+    background-color: #8b7f7f;
+    color: #f2f2f2;
+  }
+  .settings-icons i {
+    font-size: 20px;
+  }
+
+  #aside {
+    grid-area: aside;
+  }
+  .hidden {
+    display: none;
+  }
+  .aside-element {
+    display: flex;
+    position: absolute;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+    z-index: 99;
+  }
+  .aside-element div {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 30px;
+    gap: 20px;
+    color: #363434;
+  }
+  .aside-element img {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .aside-element div.border {
+    border-bottom: 1px solid #e5e5e5;
+    width: 200px;
+  }
+  .aside-element div:hover {
+    background-color: #f2f2f2;
+    color: #0f0f0f;
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .aside-element p {
+    font-size: 15px;
+  }
+  .aside-element i {
+    font-size: 18px;
+  }
+  #sidebar-menu li {
+    display: none;
+  }
+  .short-sidebar-menu {
+    width: 90px;
+    height: auto;
+  }
+  .short-sidebar-menu li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    line-height: 3;
+    cursor: pointer;
+    padding-right: 10px;
+  }
+
+  .short-sidebar-menu i {
+    font-size: 22px;
+  }
+  .short-sidebar-menu p {
+    font-size: 10px;
+  }
+  .short-sidebar-menu li:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  #navbar {
+    width: 600px;
+    overflow-x: auto;
+  }
+  #navbar-list ul {
+    width: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+  }
+  #navbar-list li {
+    background-color: #f2f2f2;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #393939;
+    cursor: pointer;
+    font-weight: 400;
+  }
+
+  #navbar-list li:hover {
+    background-color: #ccc;
+  }
+  #navbar-list li.btn-clicked {
+    background-color: black;
+    color: #ccc;
+  }
+  #main {
+    grid-area: main;
+    width: 800px;
+  }
+  .video-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 300px;
+  }
+  .videos {
+    position: relative;
+  }
+  .video-length {
+    position: absolute;
+    right: 25%;
+    background-color: black;
+    color: white;
+    top: 50%;
+  }
+  .videos-img {
+    width: 310px;
+    height: 175px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .video-channel {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .channel-logo {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .videos h4 {
+    font-family: "Roboto", "Arial", sans-serif;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  .channel-p {
+    opacity: 0.5;
+    font-size: smaller;
+    line-height: 2;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .dark-mode {
+    background-color: #0f0f0f;
+    color: white;
+  }
+  #root {
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "aside main";
+    padding-left: 10px;
+    font-family: Arial, sans-serif;
+  }
+  #header {
+    grid-area: header;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    flex-direction: row;
+    padding-left: 10px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #header.dark-mode {
+    background-color: black;
+    color: white;
+  }
+  .logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .logo img {
+    width: 110px;
+    height: 70px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  .fa-bars {
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .fa-bars:hover {
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+
+  .youtube-icon {
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .search {
+    display: flex;
+  }
+
+  .search form {
+    display: flex;
+    border: none;
+    border-radius: 40px 0 0 40px;
+    height: 40px;
+  }
+  .search input {
+    width: 600px;
+    padding: 10px;
+    height: 100%;
+    border: 1px gray solid;
+    border-radius: 40px 0 0 40px;
+  }
+  .search-btn {
+    width: 60px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 1px gray solid;
+    cursor: pointer;
+  }
+
+  .mic-btn {
+    width: 50px;
+    margin-left: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .fa-magnifying-glass {
+    font-size: 17px;
+  }
+  .fa-microphone {
+    color: blue;
+    font-size: 15px;
+  }
+
+  .header-account {
+    display: flex;
+    align-items: center;
+  }
+  .header-account i {
+    font-size: 20px;
+    padding: 15px;
+    cursor: pointer;
+  }
+  .header-i:hover {
+    background-color: #ccc;
+    border-radius: 50%;
+  }
+  .profile-image {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+  }
+  .account-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    top: 60px;
+    width: 310px;
+    height: auto;
+    background-color: #f8f8f8;
+    z-index: 99;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset;
+    display: none;
+  }
+  .account-sidebar.display-flex {
+    display: flex;
+  }
+  .personal-info {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    align-items: center;
+    gap: 20px;
+    line-height: 2;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+  }
+  .sidebar-profile-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .personal-info a {
+    text-decoration: none;
+  }
+  .account-settings {
+    display: flex;
+  }
+  .settings-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .settings-icons div {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 20px;
+    color: #363434;
+  }
+  .settings-icons div.border {
+    border-bottom: 1px solid gray;
+    width: 250px;
+    padding: 10px 0px 10px 0px;
+  }
+  .settings-icons div:hover {
+    background-color: #8b7f7f;
+    color: #f2f2f2;
+  }
+  .settings-icons i {
+    font-size: 20px;
+  }
+
+  #aside {
+    grid-area: aside;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .short-sidebar-menu {
+    width: 90px;
+    height: auto;
+  }
+  .aside-element {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    cursor: pointer;
+  }
+  .aside-element div {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 30px;
+    gap: 20px;
+    color: #363434;
+  }
+  .aside-element img {
+    width: 30px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .aside-element div.border {
+    border-bottom: 1px solid #e5e5e5;
+    width: 200px;
+  }
+  .aside-element div:hover {
+    background-color: #f2f2f2;
+    color: #0f0f0f;
+    width: 150px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .aside-element p {
+    font-size: 15px;
+  }
+  .aside-element i {
+    font-size: 18px;
+  }
+  .short-sidebar-menu li {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    line-height: 3;
+    cursor: pointer;
+    padding-right: 10px;
+  }
+
+  .short-sidebar-menu i {
+    font-size: 22px;
+  }
+  .short-sidebar-menu p {
+    font-size: 10px;
+  }
+  .short-sidebar-menu li:hover {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+  #navbar-list ul {
+    width: auto;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 25px;
+  }
+  #navbar-list li {
+    background-color: #f2f2f2;
+    margin-left: 20px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    color: #393939;
+    cursor: pointer;
+    font-weight: 400;
+  }
+
+  #navbar-list li:hover {
+    background-color: #ccc;
+  }
+  #navbar-list li.btn-clicked {
+    background-color: black;
+    color: #ccc;
+  }
+  #main {
+    grid-area: main;
+  }
+  .video-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 300px 300px;
+  }
+  .videos {
+    position: relative;
+  }
+  .video-length {
+    position: absolute;
+    right: 30px;
+    background-color: black;
+    color: white;
+    top: 50%;
+  }
+  .videos-img {
+    width: 330px;
+    height: 175px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .video-channel {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    gap: 10px;
+    cursor: pointer;
+  }
+  .channel-logo {
+    width: 40px;
+    height: auto;
+    border-radius: 50%;
+  }
+  .videos h4 {
+    font-family: "Roboto", "Arial", sans-serif;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  .channel-p {
+    opacity: 0.5;
+    font-size: smaller;
+    line-height: 2;
+  }
+}
