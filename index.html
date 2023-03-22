@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youtube</title>
+    <link rel="icon" href="./assets/icons/youtube-icon.png" />
+    <link rel="stylesheet" href="./index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="root">
+      <header id="header">
+        <div class="logo">
+          <i class="fa-solid fa-bars" id="menu-btn"></i>
+          <a href=""
+            ><img
+              src="./assets/icons/youtubeicon.png"
+              alt="youtubeicon"
+              class="youtube-icon"
+          /></a>
+        </div>
+        <div class="search">
+          <form>
+            <input type="text" placeholder="Search" />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <button class="mic-btn">
+            <i class="fa-solid fa-microphone"></i>
+          </button>
+        </div>
+        <div class="header-account">
+          <i
+            id="dark-day-mode"
+            class="fa-solid fa-circle-half-stroke header-i"
+          ></i>
+          <i class="fa-regular fa-bell header-i"></i>
+          <img
+            src="./assets/icons/profiledeafult.png"
+            class="profile-image"
+            alt=""
+          />
+          <div class="account-sidebar">
+            <div class="personal-info">
+              <img
+                src="./assets/icons/profiledeafult.png"
+                class="sidebar-profile-image"
+                alt=""
+              />
+              <div>
+                <h4>Lirim Berisha</h4>
+                <a href=""> Manage your google account</a>
+              </div>
+            </div>
+            <div class="account-settings">
+              <div class="settings-icons">
+                <div>
+                  <i class="fa-regular fa-user"></i>
+                  <p>Your channel</p>
+                </div>
+                <div>
+                  <i class="fa-brands fa-square-youtube"></i>
+                  <p>YouTube studio</p>
+                </div>
+                <div class="border">
+                  <i class="fa-solid fa-right-from-bracket"></i>
+                  <p>Sign out</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-hand-holding-dollar"></i>
+                  <p>Purchases</p>
+                </div>
+                <div class="border">
+                  <i class="fa-sharp fa-solid fa-repeat"></i>
+                  <p>Switch Account</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-moon"></i>
+                  <p>Apperance: Device theme</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-language"></i>
+                  <p>Language: English</p>
+                </div>
+                <div class="border">
+                  <i class="fa-sharp fa-solid fa-globe"></i>
+                  <p>Location: United States</p>
+                </div>
+                <div class="border">
+                  <i class="fa-solid fa-gear"></i>
+                  <p>Settings</p>
+                </div>
+                <div>
+                  <i class="fa-regular fa-circle-question"></i>
+                  <p>Help</p>
+                </div>
+                <div>
+                  <i class="fa-solid fa-circle-info"></i>
+                  <p>Send feedback</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <aside id="aside">
+        <div id="aside-parent" class="hidden">
+          <div class="aside-element">
+            <div>
+              <i class="fa-solid fa-house"></i>
+              <p>Home</p>
+            </div>
+            <div>
+              <i class="fa-brands fa-google-play"></i>
+              <p>Shorts</p>
+            </div>
+            <div class="border">
+              <i class="fa-solid fa-file-video"></i>
+              <p>Subscriptions</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-book"></i>
+              <p>Library</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <p>History</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-thumbs-up"></i>
+              <p>Liked videos</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-circle-play"></i>
+              <p>Watch later</p>
+            </div>
+            <div class="border">
+              <i class="fa-solid fa-video"></i>
+              <p>Your videos</p>
+            </div>
+            <div><p>Subscriptions</p></div>
+            <div>
+              <img src="./assets/channels/muslimanilogoezez.jpg" alt="" />
+              <p>Muslimani Ideal</p>
+            </div>
+            <div>
+              <img src="./assets/channels/klan_kosova-channel.png" alt="" />
+              <p>Klan Kosova</p>
+            </div>
+            <div>
+              <img src="./assets/channels/cars-logo.jpg" alt="" />
+              <p>Cars</p>
+            </div>
+            <div>
+              <img src="./assets/channels/artahd.png" alt="" />
+              <p>Arta HD</p>
+            </div>
+            <div>
+              <i class="fa-solid fa-magnifying-glass-plus"></i>
+              <p>Browse channels</p>
+            </div>
+          </div>
+        </div>
+        <div class="short-sidebar-menu">
+          <ul>
+            <div>
+              <li>
+                <i class="fa-solid fa-house"></i>
+                <p>Home</p>
+              </li>
+            </div>
+            <div>
+              <li>
+                <i class="fa-brands fa-google-play"></i>
+                <p>Shorts</p>
+              </li>
+            </div>
+            <div>
+              <li>
+                <i class="fa-solid fa-circle-play"></i>
+                <p>Subscriptions</p>
+              </li>
+            </div>
+            <div>
+              <li>
+                <i class="fa-solid fa-book"></i>
+                <p>Library</p>
+              </li>
+            </div>
+          </ul>
+        </div>
+      </aside>
+
+      <main id="main">
+        <nav id="navbar">
+          <div id="navbar-list">
+            <ul>
+              <li class="navbar-btn all">All</li>
+              <li class="navbar-btn html">HyperText Markup Language - HTML</li>
+              <li class="navbar-btn css">Cascading Style Sheets - CSS</li>
+              <li class="navbar-btn cars">Luxury Cars 2022 - Cars</li>
+              <li class="navbar-btn nature">Flying over countries - Nature</li>
+              <li class="navbar-btn religion">Quran recitation - Religion</li>
+            </ul>
+          </div>
+        </nav>
+        <div class="video-container all"></div>
+      </main>
+    </div>
+
+    <script src="./index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/771396ae01.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
