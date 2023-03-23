@@ -26,6 +26,19 @@ darkDayMode.addEventListener("click", function () {
   header.classList.toggle("dark-mode");
 });
 
+const microphoneBtn = document.querySelector(".mic-btn");
+const microphone = document.querySelector(".fa-microphone");
+
+microphone.addEventListener("click", function (){
+ if (microphone.classList.contains("fa-microphone")){
+  microphone.classList.remove("fa-microphone")
+  microphone.classList.add("fa-microphone-slash")
+ } else {
+  microphone.classList.add("fa-microphone")
+ }
+  
+});
+
 const videos = [
   {
     src: "./assets/Quran/el-kehf.webp",

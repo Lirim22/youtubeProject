@@ -1067,6 +1067,17 @@
   .comment p {
     margin: 0;
     padding: 0;
+    font-size: 14px;
+  }
+  .comment b {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .comment em {
+font-size: 12px;
+  }
+  .comment h5 {
+  cursor: pointer;
   }
   .comment-react {
     display: flex;
@@ -1074,10 +1085,10 @@
     height: 30px;
     width: 100%;
     align-items: center;
-    gap: 5px;
+    gap: 10px;
   }
   .comment-react i {
-    font-size: 18px;
+    font-size: 16px;
     cursor: pointer;
   }
   .next-videos {

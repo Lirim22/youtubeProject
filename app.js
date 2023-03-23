@@ -7,10 +7,24 @@ const accountToggleFunction = function () {
 };
 profileImage.addEventListener("click", accountToggleFunction);
 
+const microphoneBtn = document.querySelector(".mic-btn");
+const microphone = document.querySelector(".fa-microphone");
+
+microphone.addEventListener("click", function (){
+ if (microphone.classList.contains("fa-microphone")){
+  microphone.classList.remove("fa-microphone")
+  microphone.classList.add("fa-microphone-slash")
+ } else {
+  microphone.classList.add("fa-microphone")
+ }
+  
+});
+
 const body = document.getElementsByTagName("body")[0];
 const header = document.getElementById("header");
 const root = document.getElementById("root");
 const darkDayMode = document.getElementById("dark-day-mode");
+
 darkDayMode.addEventListener("click", function () {
   body.classList.toggle("dark-mode");
   header.classList.toggle("dark-mode");
@@ -45,17 +59,98 @@ function inputLengthFunction() {
       commentBtn.hasAttribute("disabled");
       cancelBtn.getAttribute("disabled");
     }
-  console.log(commentInputLength)
   }
 
 commentInput.addEventListener("input", inputLengthFunction);
 
+
 const commentParent = document.querySelector(".comments");
+const comments = [
+  {
+    src: "./assets/icons/default-img-transparent.png",
+    commentDescription: "Very nice video",
+    name: "Granit Xhaka",
+    time: "four months ago"
+  },
+  {
+    src: "./assets/icons/default-img-transparent.png",
+    commentDescription: "Very nice video",
+    name: "Xherdan Shaqiri",
+    time: "three weeks ago"
+  },
+  {
+    src: "./assets/icons/default-img-transparent.png",
+    commentDescription: "Very nice video",
+    name: "Cr7",
+    time: "six weeks ago"
+  },
+  {
+    src: "./assets/icons/default-img-transparent.png",
+    commentDescription: "Very nice video",
+    name: "Elon Musk",
+    time: "a month ago"
+  }
+
+];
+const convertCommentsToHtml = [];
+
+comments.forEach((commentsArray) =>{
+let nextComment;
+nextComment = `<div class="comment-profile">
+<a href="#">
+  <img
+    class="profile-logo"
+    src=${commentsArray.src}
+  />
+</a>
+<div class="comment">
+    <b>${commentsArray.name}</b> <em>${commentsArray.time} </em> <br>
+    <p>${commentsArray.commentDescription}</p>
+    
+  <div class="comment-react">
+    <i class="fa-regular fa-thumbs-up"></i>
+    <i class="fa-regular fa-thumbs-down"></i>
+    <h5>Reply</h5>
+  </div>
+ </div>
+</div>`;
+convertCommentsToHtml.push(nextComment);
+});
+commentParent.innerHTML = convertCommentsToHtml.join("");
+
 const commentChild = document.querySelector(".comment-profile");
+
 function createComment() {
-  let divComment = document.createElement("div");
-  divComment.innerHTML = commentInput.value;
-  commentParent.insertBefore(divComment, commentChild);
+
+  let myComment = {
+    src: "./assets/icons/profiledeafult.png",
+    commentDescription: commentInput.value,
+    name: "Lirim Berisha",
+    time: "now"
+  };
+
+  comments.unshift(myComment);
+
+  // Generate HTML code for all comments, including the new comment
+  let allCommentsHtml = comments.map((comment) => {
+    return `<div class="comment-profile">
+      <a href="#">
+        <img class="profile-logo" src=${comment.src} />
+      </a>
+      <div class="comment">
+        <b>${comment.name}</b> <em>${comment.time} </em> <br>
+        <p>${comment.commentDescription}</p>
+
+        <div class="comment-react">
+          <i class="fa-regular fa-thumbs-up"></i>
+          <i class="fa-regular fa-thumbs-down"></i>
+          <h5>Reply</h5>
+        </div>
+      </div>
+    </div>`;
+  }).join("");
+
+  commentParent.innerHTML = allCommentsHtml;
 }
 commentBtn.addEventListener("click", createComment);
 
