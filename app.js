@@ -40,29 +40,30 @@ const menuBtnToggle = function () {
 menuBtn.addEventListener("click", menuBtnToggle);
 
 const subscribeBtn = document.querySelector(".subscribe-button");
-subscribeBtn.addEventListener("click", function () {
-  subscribeBtn.innerHTML = "Subscribed";
-  subscribeBtn.style.color = "red";
-});
+function handleSubscribeClick() {
+  if (subscribeBtn.innerHTML === "Subscribe") {
+    subscribeBtn.innerHTML = "Subscribed";
+    subscribeBtn.style.color = "red";
+  } else {
+    subscribeBtn.innerHTML = "Subscribe";
+    subscribeBtn.style.color = "White";
+  }
+}
+
+subscribeBtn.addEventListener("click", handleSubscribeClick);
 
 const commentInput = document.getElementsByClassName("add-comment-input")[0];
 const cancelBtn = document.querySelector(".cancel");
 const commentBtn = document.querySelector(".comment");
 
-function inputLengthFunction() {
+function handleCommentInput() {
   const commentInputLength = commentInput.value.length;
-  if (commentInputLength > 0) {
-    commentBtn.removeAttribute("disabled");
-    cancelBtn.removeAttribute("disabled");
-  }
-    else {
-      commentBtn.setAttribute("disabled", true);
-      cancelBtn.setAttribute("disabled", true);
-    }
-  }
+  
+  commentBtn.disabled = commentInputLength <= 0;
+  cancelBtn.disabled = commentInputLength <= 0;
+}
 
-commentInput.addEventListener("input", inputLengthFunction);
-
+commentInput.addEventListener("input", handleCommentInput);
 
 const commentParent = document.querySelector(".comments");
 const comments = [
