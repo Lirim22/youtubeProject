@@ -51,13 +51,13 @@ const commentBtn = document.querySelector(".comment");
 
 function inputLengthFunction() {
   const commentInputLength = commentInput.value.length;
-  if (commentInputLength >= 0) {
+  if (commentInputLength > 0) {
     commentBtn.removeAttribute("disabled");
     cancelBtn.removeAttribute("disabled");
   }
     else {
-      commentBtn.hasAttribute("disabled");
-      cancelBtn.getAttribute("disabled");
+      commentBtn.setAttribute("disabled", true);
+      cancelBtn.setAttribute("disabled", true);
     }
   }
 
